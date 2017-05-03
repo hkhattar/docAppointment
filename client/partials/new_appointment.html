@@ -1,0 +1,31 @@
+{{user.name}}
+
+<h2>New Appointment</h2>
+
+<form ng-submit='create_appointment()'>
+  Date:<br>
+  <input type="date" name="date" ng-model='newAppointment.date'>
+  <br><br>
+  Time:<br>
+  <select type="time" name="time" id="myTime" min="8:00:00" max="17:00:00" ng-model='newAppointment.time'>
+  	<option>8:00 AM</option>
+	<option>9:00 AM</option>
+	<option>10:00 AM</option>
+	<option>11:00 AM</option>
+	<option>12:00 PM</option>
+	<option>1:00 PM</option>
+	<option>2:00 PM</option>
+	<option>3:00 PM</option>
+	<option>4:00 PM</option>
+	<option>5:00 PM</option>
+  	
+  </select>
+  
+  <br><br>
+  Complain:<br>
+  <textarea rows="20" cols="40"type="text" name="complain" ng-model='newAppointment.complain'> </textarea>
+  {{error.complain_length}}
+  {{cannot}}
+  <br><br>
+  <input type="submit" value="Add appointment" >
+</form> 

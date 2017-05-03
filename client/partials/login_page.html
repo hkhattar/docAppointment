@@ -1,0 +1,16 @@
+{{user.name}}
+
+<h3>Welcome !</h3>
+<p>New User! Please enter your name and schedule an appointment</p>
+
+<form>
+	<input type="text" ng-model="newUser.name">
+	<button ng-click="addUser()">Register</button>
+</form>
+
+<p>Returning user! Please sign in</p>
+
+<form>
+			<input type="text" ng-model="oldUser.name"></input>
+			<button  ng-click="login(oldUser.name)">Login</button>
+		</form>

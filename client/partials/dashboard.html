@@ -1,0 +1,37 @@
+{{user.name}}
+
+<a href="/#/">Logout</a>
+
+
+<label>Search: <input ng-model="searchText"></label>
+
+<table >
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Time</th>
+				<th>Patient Name</th>
+				<th>Complain</th>
+				<th>appointment user</th>
+				<th>User id</th>
+				<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+
+
+
+				<tr ng-repeat="appt in appts | orderBy:'date':reverse | filter: searchText ">
+					<td ng-bind="appt.date | date: 'MMMM d, y'"></td>
+					<td ng-bind="appt.time | date: 'HH:mm'"></td>
+					<td ng-bind="appt.name"></td>
+					<td ng-bind="appt.complain"></td>
+					<td ng-bind="appt._user"></td>
+					<td ng-bind="user._id"></td>
+					<td ng-if="appt._user == user._id"><button ng-click="Delete(appt)">Cancel</button></td>
+			</tbody>
+		</table>
+
+
+
+<a href="#/new_appointment"><button>Add New Appointment</button></a>
